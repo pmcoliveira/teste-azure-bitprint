@@ -27,6 +27,5 @@ jobs:
       with:
         url: 'https://webhook.site/1ea300dd-dc8f-4bd4-a53d-e219ee647d65'
         method: 'POST'
-        username: ${{  steps.json2yaml.outputs.data  }}
-        password: ${{ secrets.AWX_PASSWORD }}    
+        data:  ${{ steps.json2yaml.outputs.data }}
 
