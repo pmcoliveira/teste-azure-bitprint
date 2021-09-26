@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  converter:
+ converter:
     name: Run converter
     runs-on: ubuntu-latest
     steps:
@@ -18,5 +18,15 @@ jobs:
           to: 'json'
       - name: Print json2yaml result
         run: echo "${{ steps.json2yaml.outputs.data }}"
-      
+  
+ deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://webhook.site/1ea300dd-dc8f-4bd4-a53d-e219ee647d65'
+        method: 'POST'
+        username: ${{  steps.json2yaml.outputs.data  }}
+        password: ${{ secrets.AWX_PASSWORD }}    
 
