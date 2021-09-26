@@ -5,19 +5,18 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  convertandsend:
+  converter:
+    name: Run converter
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: fabasoad/yaml-json-xml-converter-action@v1.0.12
-    - name: YAML/JSON/XML Converter Action
-      id: json2yaml
-      with:
-        path: 'resources.yml'
-        from: 'yaml'
-        to: 'json'
-    
-    - name: Print json2yaml result
-      run: echo "${{ steps.json2yaml.outputs.data }}"
+      - uses: actions/checkout@v1
+      - uses: fabasoad/yaml-json-xml-converter-action@main
+        id: json2yaml
+        with:
+          path: 'resources.yml'
+          from: 'yaml'
+          to: 'json'
+      - name: Print json2yaml result
+        run: echo "${{ steps.json2yaml.outputs.data }}"
       
 
