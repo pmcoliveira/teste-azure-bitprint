@@ -1,0 +1,6 @@
+deploy:
+  - resource: app-service-plan
+    name: app-service-plan-1
+    type: windows
+  - resource: app-service
+    name: app-service-1
