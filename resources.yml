@@ -8,6 +8,8 @@ deploy:
     name: database-1
   - resource: mongo
     name : mongo
+  - resource : feature
+    name : blabla
     
     
 
