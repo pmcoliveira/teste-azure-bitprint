@@ -8,13 +8,20 @@ jobs:
  build:
     runs-on: ubuntu-latest
     steps:
+    - name : Checkout file changes
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
       id: filter
       with:
+        list-files: json
         filters: |
-         yml:
-          - '*.yml'
+         changed:
+          - '**'
+    
+    - name: Lint Markdown
+      uses: johndoe/some-action@v1
+      with:
+       files: ${{ steps.filter.outputs.changed_files }}
     
     
 
