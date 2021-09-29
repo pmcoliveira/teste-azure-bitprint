@@ -41,11 +41,13 @@ jobs:
     env:
       FILES: ${{ needs.show-result.outputs.changedFiles}}
     steps:
-      - name: Convert yaml to json and send
+      - uses: actions/github-script@v5
+        name: Convert yaml to json and send
         id: convertAndSend
-        run: |
-          const files = $FILES | jq
-          echo $files
+        with:
+          script: |
+             const files = $FILES | jq
+             echo $files
           
 
        
