@@ -6,8 +6,8 @@ deploy:
     name: app-service-1
   - resource: database
     name: database-1
-
-
+  - resource: mongo
+    name : mongo1
 
 
 
