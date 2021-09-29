@@ -4,3 +4,7 @@ deploy:
     type: windows
   - resource: app-service
     name: app-service-1
+  - resource: database
+    name: database-1
+
+
