@@ -33,12 +33,12 @@ jobs:
  convertAndSend:
     needs: show-result
     runs-on: ubunt-latest
+    env:
+      FILES: ${{ needs.show-result.outputs.changedFiles}}
     steps:
       - name: Convert yaml to json and send
         id: convertAndSend
-    env:
-      FILES: ${{ needs.show-result.outputs.changedFiles}}
-      run: for f in $FILES; do [ echo f]; done
+        run: for f in $FILES; do [ echo f]; done
         
   
     
