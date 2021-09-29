@@ -15,12 +15,10 @@ jobs:
         list-files: json
         filters: |
          changed:
-          - '*.yml'
+          - '**'
           
-    - name: Lint Markdown
-      uses: johndoe/some-action@v1
-      with:
-       files: ${{ steps.filter.outputs.changed_files }}
+    - name: print changes
+      run : echo "${{ steps.filter.outputs.changed_files }}"
     
     
 
