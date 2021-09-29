@@ -16,9 +16,11 @@ jobs:
         filters: |
          changed:
           - '**'
-          
-    - name: print changes
-      run : echo "${{ steps.filter.outputs.changed_files }}"
+ show-result:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print changes
+        run : echo "${{ steps.filter.outputs.changed_files }}"
     
     
 
