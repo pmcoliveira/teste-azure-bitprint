@@ -62,7 +62,7 @@ jobs:
           parse_yaml $f
          
           done 
-        
+        working-directory: ./
   
     
     
