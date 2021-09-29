@@ -32,7 +32,7 @@ jobs:
  
  convertAndSend:
     needs: show-result
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     env:
       FILES: ${{ needs.show-result.outputs.changedFiles}}
     steps:
