@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
- build:
+ filter:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -21,11 +21,11 @@ jobs:
       listOfChangedFiles : ${{ steps.filter.outputs.changed_files }}
       
  show-result:
-    needs: [ build ]
+    needs:  filter
     runs-on: ubuntu-latest
     steps:
       - name: print changes
-        run : echo "${{ needs.filter.outputs.listOfChangedFiles}}""
+        run : echo "${{ needs.filter.outputs.listOfChangedFiles}}"
     
     
 
