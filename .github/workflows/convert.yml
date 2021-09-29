@@ -16,7 +16,7 @@ jobs:
          src:
           - 'src/**'
   converter:
-   if: steps.changes.outputs.src == 'true'
+   if: changedfiles.steps.changes.outputs.src == 'true'
    name: Run converter
    runs-on: ubuntu-latest
    steps:
