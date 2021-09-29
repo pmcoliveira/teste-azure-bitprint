@@ -38,7 +38,9 @@ jobs:
     steps:
       - name: Convert yaml to json and send
         id: convertAndSend
-        run: for f in $FILES; do [ echo f ]; done
+        run: |
+          echo $FILES
+          for f in $FILES; do [ echo f ]; done
         
   
     
