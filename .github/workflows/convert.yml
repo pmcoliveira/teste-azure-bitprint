@@ -8,9 +8,9 @@ jobs:
  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Get List of changed files 
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
+      name: Get List of changed files 
       id: filter
       with:
         list-files: json
