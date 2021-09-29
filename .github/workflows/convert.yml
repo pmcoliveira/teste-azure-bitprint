@@ -17,6 +17,7 @@ jobs:
          changed:
           - '**'
  show-result:
+    needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - name: print changes
