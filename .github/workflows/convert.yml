@@ -8,6 +8,7 @@ jobs:
  build:
     runs-on: ubuntu-latest
     steps:
+    
     - name : Checkout file changes
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
@@ -19,7 +20,7 @@ jobs:
           - '**'
     
     - name: Lint Markdown
-      uses: johndoe/some-action@v1
+    - uses: johndoe/some-action@v1
       with:
        files: ${{ steps.filter.outputs.changed_files }}
     
