@@ -65,6 +65,7 @@ jobs:
           $object =  $FILES | jq
           
           for f in $object; 
+          do
           parse_yaml $f
           done 
 
