@@ -12,9 +12,9 @@ jobs:
        uses: tj-actions/verify-changed-files@v7.2
        id: verify-changed-files
        with:
-         filters: |
-          src:
-           - 'src/**'
+        files: |
+          .(yml)$
+          
      - name: Run step only when files change
        if: steps.verify-changed-files.outputs.files_changed == 'true'
        run: |
