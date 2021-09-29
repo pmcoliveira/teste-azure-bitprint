@@ -8,6 +8,7 @@ jobs:
  build:
     runs-on: ubuntu-latest
     steps:
+    - name: Get List of changed files 
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
       id: filter
@@ -15,13 +16,13 @@ jobs:
         list-files: json
         filters: |
          changed:
-          - '**'
+          - '**' 
  show-result:
     needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - name: print changes
-        run : echo "${{ steps.filter.outputs.changed_files }}"
+        run : echo ""
     
     
 
