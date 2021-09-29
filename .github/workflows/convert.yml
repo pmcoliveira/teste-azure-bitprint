@@ -56,7 +56,12 @@ jobs:
            }'
          }
          
-          for f in $FILES; do [ parse_yaml "$f" ]; done 
+          for f in $FILES; 
+          do 
+          
+          parse_yaml $f
+         
+          done 
         
   
     
