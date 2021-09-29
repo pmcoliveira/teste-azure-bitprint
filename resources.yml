@@ -7,7 +7,7 @@ deploy:
   - resource: database
     name: database-1
   - resource: mongo
-    name : mongo-1
+    name : mongo
     
     
 
