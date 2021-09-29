@@ -44,7 +44,6 @@ jobs:
       - name: Convert yaml to json and send
         id: convertAndSend
         run: |
-        
           function parse_yaml {
            local prefix=$2
            local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
@@ -61,13 +60,17 @@ jobs:
               }
            }'
           }
+    
+            $object =  $FILES | jq
           
-          $object =  $FILES | jq
+            echo $object
           
-          for f in $object; 
-          do
-          parse_yaml $f
-          done 
+            for f in $object; 
+          
+            do
+              parse_yaml $f
+          
+            done 
 
        
   
