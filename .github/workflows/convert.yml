@@ -44,11 +44,7 @@ jobs:
       - name: Convert yaml to json and send
         id: convertAndSend
         run: |
-          
-            for f in $( $FILES | jq );
-              do
-                echo $f
-              done
+           $FILES | jq
           
 
        
