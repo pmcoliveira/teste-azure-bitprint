@@ -25,7 +25,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print changes
+        id : show-result
         run : echo "${{ needs.filter.outputs.listOfChangedFiles}}"
+    outputs:
+      changedFiles: ${{ needs.filter.outputs.listOfChangedFiles}}
+ 
+ convertAndSend:
+    needs: show-result
+    runs-on: ubunt-latest
+    steps:
+      - name: Convert yaml to json and send
+        id: convertAndSend
+    env:
+      FILES: ${{ needs.show-result.outputs.changedFiles}}
+      run: for f in $FILES; do [ echo f]; done
+        
+  
     
     
 
