@@ -17,12 +17,15 @@ jobs:
         filters: |
          changed:
           - '**' 
+    outputs:
+      listOfChangedFiles : ${{ steps.filter.outputs.changed_files }}
+      
  show-result:
     needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - name: print changes
-        run : echo ""
+        run : echo "${{ needs.filter.outputs.listOfChangedFiles}}""
     
     
 
