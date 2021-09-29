@@ -45,7 +45,7 @@ jobs:
         id: convertAndSend
         run: |
           
-            for f in ( $FILES | jq );
+            for f in $( $FILES | jq );
               do
                 echo $f
               done
