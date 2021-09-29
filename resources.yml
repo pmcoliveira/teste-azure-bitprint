@@ -9,7 +9,7 @@ deploy:
   - resource: mongo
     name : mongo1
   - resource : firewall
-    name: firewal
+    name: firewall
     
     
 
