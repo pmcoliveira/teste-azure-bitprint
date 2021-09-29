@@ -44,12 +44,13 @@ jobs:
       - name: Convert yaml to json and send
         id: convertAndSend
         run: |
-            $object =  $FILES | jq
+            object= $FILES|jq
             echo $object
+            
             for f in $object;
-            do
-            echo $f
-            done
+              do
+                echo $f
+              done
           
 
        
