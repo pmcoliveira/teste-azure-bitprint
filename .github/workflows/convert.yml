@@ -43,9 +43,8 @@ jobs:
     steps:
       - name: Convert yaml to json and send
         id: convertAndSend
-        with:
-         script: |
-             echo $($FILES | jq)
+        run: |
+           echo $($FILES | jq)
 
           
 
