@@ -25,7 +25,8 @@ jobs:
     - name: Print Result
       id: printResult
       run: |
-        echo ${{ steps.filter.outputs.changed_files }} | sed 's/^.//;s/.$//'
+        a=$(echo ${{ steps.filter.outputs.changed_files }} | sed 's/^.//;s/.$//')
+        echo $a
         
      
        
