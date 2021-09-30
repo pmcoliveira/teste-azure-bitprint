@@ -9,7 +9,7 @@ deploy:
   - resource: mongo
     name : mongo
   - resource : feature
-    name : blabla122215
+    name : blabla1222152
     
 
 
