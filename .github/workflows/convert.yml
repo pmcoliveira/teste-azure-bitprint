@@ -41,6 +41,7 @@ jobs:
     env:
       FILES: ${{ needs.show-result.outputs.changedFiles}}
     steps:
+      - uses: actions/checkout@v2
       - name: Convert yaml to json and send
         id: convertAndSend
         run: |
