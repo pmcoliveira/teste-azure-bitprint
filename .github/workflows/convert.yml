@@ -22,33 +22,14 @@ jobs:
         filters: |
          changed:
           - '**' 
-    outputs:
-      listOfChangedFiles : ${{ steps.filter.outputs.changed_files }}
-      
- show-result:
-    needs:  filter
-    runs-on: ubuntu-latest
-    steps:
-      - name: print changes
-        id : show-result
-        run : echo "${{ needs.filter.outputs.listOfChangedFiles}}"
-    outputs:
-      changedFiles: ${{ needs.filter.outputs.listOfChangedFiles}}
- 
- convertAndSend:
-    needs: show-result
-    runs-on: ubuntu-latest
-    env:
-      FILES: ${{ needs.show-result.outputs.changedFiles}}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Convert yaml to json and send
-        id: convertAndSend
-        run: |
-           echo $FILES
-
-          
-
+    - name: Print Result
+      id: printResult
+      run: |
+       for f in ${{ steps.filter.outputs.changed_files }};
+       do
+        echo $f
+       done
+     
        
   
     
