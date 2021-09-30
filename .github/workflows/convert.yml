@@ -26,7 +26,13 @@ jobs:
       id: printResult
       run: |
         a=$(echo ${{ steps.filter.outputs.changed_files }} | sed 's/^.//;s/.$//')
-        echo $a
+        
+        IFS=', ' read -r -a array <<< "$a"
+        
+        for element in "${array[@]}"
+          do
+            echo "$element"
+          done
         
      
        
