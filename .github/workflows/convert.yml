@@ -25,7 +25,10 @@ jobs:
     - name: Print Result
       id: printResult
       run: |
-       echo ${{ steps.filter.outputs.changed_files }}
+       for f in ${{ steps.filter.outputs.changed_files }};
+       do
+        echo $f
+       done
      
        
   
