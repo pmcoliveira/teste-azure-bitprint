@@ -25,7 +25,7 @@ jobs:
     - name: Print Result
       id: printResult
       run: |
-       eco ${{ steps.filter.outputs.changed_files }}
+       echo ${{ steps.filter.outputs.changed_files }}
      
        
   
