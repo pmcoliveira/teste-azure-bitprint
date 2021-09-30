@@ -25,12 +25,8 @@ jobs:
     - name: Print Result
       id: printResult
       run: |
-       read -a arr <<< echo ${{ steps.filter.outputs.changed_files }} | sed 's/^.//;s/.$//'
-       echo $arr
-       for f in $arr;
-       do 
-       echo $f
-       done
+        echo ${{ steps.filter.outputs.changed_files }} | sed 's/^.//;s/.$//'
+        
      
        
   
